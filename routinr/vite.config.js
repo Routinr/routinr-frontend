@@ -24,10 +24,6 @@ export default defineConfig({
             // Add more icons as needed
           ],
         },
-        workbox: {
-          // Specify the service worker source file
-          swSrc: 'src/serviceWorker.js',
-        },
       }),
   ],
 
