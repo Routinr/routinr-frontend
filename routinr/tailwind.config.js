@@ -9,6 +9,9 @@ module.exports = {
        backgroundImage: {
         'mobilebg': "url('./src/assets/bg.png')",
       },
+      screens: {
+        'custom-sm': '300px',
+      }
     },
   },
   plugins: [],
