@@ -1,13 +1,14 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const HomePage = () => {
   return (
     <div className="App">
-			<h1 className="text-3xl font-bold underline text-blue-500">
-				Hello world!
-			</h1>
-		</div>
-  )
+      <div className="bg-[#031A3E] h-[100vh] w-full">
+        <Navbar />
+      </div>
+    </div>
+  );
 }
 
 export default HomePage
