@@ -1,0 +1,11 @@
+@media screen and (max-width: 600px) {
+    .main{
+        background: url('../assets/images/homebg.png') no-repeat center;
+        background-size: cover;
+    }
+    form .input{
+        margin-bottom: 15px;
+        height: 40px;
+    }
+}
+
