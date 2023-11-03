@@ -8,6 +8,7 @@ import './index.css'
 import HomePage from "./views/HomePage.jsx";
 import Signup from "./views/authentication/Signup.jsx";
 import Login from "./views/authentication/Login.jsx";
+import Dashboard from './views/components/Dashboard';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" exact element={<HomePage />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/signup" exact element={<Signup />} />
+        <Route path="/dashboard" exact element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
