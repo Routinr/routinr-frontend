@@ -2,12 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/App.css";
 import SubmitBtn from "../../assets/icons/signup.png";
+import DesktopAuth from "../../assets/images/auth/DesktopAuth.png"
+
 
 const Signup = () => {
   return (
     <div className="main w-full h-[100vh] grid place-items-center">
-      <div className="md:w-1/3 custom-sm:w-[400px] bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25">
-        <div className="">
+      <div className=" flex 
+    md:pr-0 md:py-0 md:w-7/12 md:justify-between md:items-center
+    bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25">
+      <div className="w-[50%] h-[60%] grid items-center">
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
           </h1>
@@ -45,7 +49,7 @@ const Signup = () => {
               <img
                 src={SubmitBtn}
                 alt="Submit"
-                className="w-[40px] h-[40px] float-right ml-2"
+                className="w-[40px] h-[40px] float-right ml-2 my-2"
               />
             </button>
           </form>
@@ -59,6 +63,9 @@ const Signup = () => {
             </Link>
           </div>
         </div>
+
+      <img src={DesktopAuth} alt="" className='desktop-img h-[500px] ml-[35px]'/>
+
       </div>
     </div>
   );
