@@ -15,7 +15,7 @@ const Login = () => {
       bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25"
       >
         <div className="w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
-          <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px]">
+          <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
             Welcome Back :)
           </h1>
           <form action="" className="flex flex-col">
@@ -43,16 +43,16 @@ const Login = () => {
             </button>
           </form>
 
-          <div className="flex justify-between w-full mb-5">
+          <div className="flex justify-between w-full mb-5 custom-sm:flex-col">
             <Link
               to={"/signup"}
-              className="text-white mx-2 mt-3 font-semibold underline text-[17px]"
+              className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:mt-3 custom-sm:text-[14px]" 
             >
               Sign Up
             </Link>
 
             <Link to={"/forgotpassword"}>
-              <h1 className="text-white mx-2 mt-3 font-semibold underline text-[17px]">
+              <h1 className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:text-[14px]">
                 Forgot Password?
               </h1>
             </Link>
