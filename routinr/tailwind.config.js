@@ -10,7 +10,7 @@ module.exports = {
         'mobilebg': "url('./src/assets/bg.png')",
       },
       screens: {
-        'custom-sm': '300px',
+        'custom-sm': '400px',
       }
     },
   },

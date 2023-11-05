@@ -6,14 +6,15 @@ import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Signup = () => {
   return (
-    <div className="main w-full h-[100vh] grid place-items-center">
+    <div className="main w-full h-[100vh] grid place-items-center" >
       <div
         className="auth-cont flex
         w-2/3
+        custom-sm:w-[90%]
         lg:pr-0 lg:py-0 lg:w-7/12 lg:justify-between lg:items-center
       bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25"
       >
-        <div className="w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
+        <div className=" w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
           </h1>

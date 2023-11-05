@@ -10,6 +10,7 @@ const Login = () => {
       <div
         className="auth-cont flex 
         w-2/3
+        custom-sm:w-[90%]
         lg:pr-0 lg:py-0 lg:w-7/12 lg:justify-between lg:items-center
       bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25"
       >
