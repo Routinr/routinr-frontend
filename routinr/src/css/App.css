@@ -7,5 +7,16 @@
         margin-bottom: 15px;
         height: 40px;
     }
+    .desktop-img{
+        display: none;
+    }
 }
 
+form .input{
+    margin-bottom: 15px;
+    height: 45px;
+}
+.main{
+    background: url('../assets/images/auth/DesktopAuthBg.png') no-repeat center;
+    background-size: cover;
+}
