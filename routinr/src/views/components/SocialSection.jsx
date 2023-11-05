@@ -1,5 +1,5 @@
 import React from 'react'
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"
 import socialicon from "../../assets/icons/socialicon.png";
 import socialicon1 from "../../assets/icons/socialicon1.png";
 
