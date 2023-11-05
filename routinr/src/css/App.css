@@ -1,22 +1,35 @@
 @media screen and (max-width: 600px) {
-    .main{
+    .main {
         background: url('../assets/images/homebg.png') no-repeat center;
         background-size: cover;
     }
-    form .input{
+
+    form .input {
         margin-bottom: 15px;
         height: 40px;
     }
-    .desktop-img{
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-img {
         display: none;
     }
 }
 
-form .input{
+@media (min-width: 768px) and (max-width: 1020px) {
+    .auth-cont {
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+form .input {
     margin-bottom: 15px;
     height: 45px;
 }
-.main{
+
+.main {
     background: url('../assets/images/auth/DesktopAuthBg.png') no-repeat center;
     background-size: cover;
 }
