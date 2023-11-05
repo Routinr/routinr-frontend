@@ -6,7 +6,7 @@ import SubmitBtn from "../../assets/icons/signup.png";
 const Signup = () => {
   return (
     <div className="main w-full h-[100vh] grid place-items-center">
-      <div className="md:w-1/3 custom-sm:w-11/12 bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25">
+      <div className="md:w-1/3 custom-sm:w-[400px] bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25">
         <div className="">
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
