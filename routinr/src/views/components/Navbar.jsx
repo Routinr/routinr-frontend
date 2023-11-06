@@ -1,6 +1,7 @@
 import React from "react";
 import harmbugger from "../../assets/icons/menu.png";
 import logo from "../../assets/images/logo.png";
+import dashboardlogo from "../../assets/icons/dashboardlogo.png";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -28,7 +29,12 @@ const Navbar = () => {
   return (
     <div className="flex justify-between">
       <div>
-        <img className="w-[70px] md:w-full" src={logo} alt="logo" />
+        <img className="md:hidden w-[70px] md:w-full" src={logo} alt="logo" />
+        <img
+          className="hidden md:block w-[70px] md:w-full"
+          src={dashboardlogo}
+          alt="logo"
+        />
       </div>
       <div className="flex gap-[30px]">
         {isMobile ? (
@@ -42,7 +48,7 @@ const Navbar = () => {
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>About</Link>
             </button>
-            <button className="bg-transparent  text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-transparent underline text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
             <button className="bg-[#386BD9] text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
@@ -60,7 +66,7 @@ const Navbar = () => {
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>About</Link>
             </button>
-            <button className="bg-transparent  text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-transparent underline text-[#386BD9]  font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
             <button className="bg-[#386BD9] text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
