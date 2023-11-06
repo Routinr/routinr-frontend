@@ -11,15 +11,15 @@ const HomePage = () => {
       <div className="hidden md:block md:absolute right-0">
         <img className="w-[150px]" src={Ellipse3} alt="ellipse3" />
       </div>
-      <div className="main sm:bg-[#031A3E] md:bg-[#031A3E] pt-28 md:pt-10   w-full lg:p-10 p-5">
+      <div className="bg-[#031A3E] pt-28 md:pt-10   w-full lg:p-10 p-5">
         <MainSection />
       </div>
-      <div className="main md:bg-[#031A3E] sm:bg-[#031A3E]  w-full p-10">
+      <div className="bg-[#031A3E]  w-full p-10">
         <div className="flex justify-center mt-12">
           <SecondSection />
         </div>
       </div>
-      <div className="main sm:bg-[#031A3E] md:bg-[#031A3E]   w-full p-1">
+      <div className="bg-[#031A3E]   w-full p-1">
         <div className="flex justify-center ">
           <div className="">
             <h1 className="lg:text-6xl md:text-3xl text-xl text-center font-bold text-white mt-10 md:mt-28 leading-snug">
@@ -32,10 +32,10 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="main sm:bg-[#031A3E] md:bg-[#031A3E] pt-28 md:pt-12  w-full lg:p-24 p-5">
+      <div className="bg-[#031A3E] pt-28 md:pt-12  w-full lg:p-24 p-5">
         <CardsSection />
       </div>
-      <div className="main sm:bg-[#031A3E] md:bg-[#031A3E]   w-full p-0 pt-1 md:pt-5">
+      <div className="bg-[#031A3E]   w-full p-0 pt-1 md:pt-5">
         <h1 className="lg:text-6xl md:text-3xl text-3xl text-center font-bold text-white mt-28 leading-snug">
           Integrate With Tools You Love
         </h1>
@@ -44,7 +44,7 @@ const HomePage = () => {
           <br /> Your Popular Tools
         </p>
       </div>
-      <div className="main sm:bg-[#031A3E] md:bg-[#031A3E] pt-20 p-5">
+      <div className="bg-[#031A3E] pt-20 p-5">
         <SocialSection />
       </div>
       <div className="bg-[#153362] h-fit md:h-[350px]">
