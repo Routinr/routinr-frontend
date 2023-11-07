@@ -32,7 +32,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="pt-28 md:pt-12  w-full lg:p-24 p-5">
+      <div className="pt-28 md:pt-12  w-full lg:p-24 p-3">
         <CardsSection />
       </div>
       <div className="w-full p-0 pt-1 md:pt-5">
@@ -47,7 +47,7 @@ const HomePage = () => {
       <div className="pt-20 p-5">
         <SocialSection />
       </div>
-      <div className="h-fit md:h-[350px]">
+      <div className="h-fit md:h-[350px] bg-[#153362]">
         <Footer />
       </div>
     </div>

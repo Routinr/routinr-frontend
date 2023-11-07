@@ -11,23 +11,23 @@ const CardsSection = () => {
         src={left}
         alt="left_shape"
       />
-      <div className="flex flex-col md:bg-[#031A3E] justify-center items-center text-center border-[1px] border-[rgb(189,106,247)] text-white p-3 md:p-5 lg:p-8 rounded-lg z-30 md:w-[370px] lg:w-[400px] w-[250px]">
+      <div className="flex flex-col md:bg-[#031A3E] justify-center items-center text-center border-[1px] border-[rgb(189,106,247)] text-white p-2 md:p-5 lg:p-8 rounded-lg z-30 md:w-[370px] lg:w-[400px] w-[140px]">
         <img className="w-[85px] mt-5 md:mt-0" src={shape} alt="shape" />
-        <h2 className="mt-6 font-bold text-2xl">My Tasks</h2>
-        <p className="mt-5 text-md font-semibold text-[14px] md:text-[20px]">
+        <h2 className="mt-6 font-bold text-lg md:text-2xl">My Tasks</h2>
+        <p className="mt-5  font-semibold text-[12px] md:text-[20px]">
           Easily Balance Your Work, Life And
           <br /> Everything In Between
         </p>
       </div>
 
-      <div className="flex flex-col md:bg-[#031A3E] justify-center mt-10 md:mt-0 items-center text-center border-[1px] border-[#BD6AF7] text-white p-3 md:p-5 lg:p-8 rounded-lg z-30 md:w-[350px] lg:w-[400px] w-[250px]">
+      <div className="flex flex-col md:bg-[#031A3E] justify-center mt-10 md:mt-0 items-center text-center border-[1px] border-[#BD6AF7] text-white p-2 md:p-5 lg:p-8 rounded-lg z-30 md:w-[350px] lg:w-[400px] w-[140px]">
         <img
           className="w-[100px] mt-5 md:mt-0 "
           src={bubble}
           alt="bubble shape"
         />
-        <h2 className="mt-6 font-bold text-2xl">My Team Tasks</h2>
-        <p className="mt-5 text-md font-semibold text-[14px] md:text-[20px]">
+        <h2 className="mt-6 font-bold text-lg md:text-2xl">My Team Tasks</h2>
+        <p className="mt-5  font-semibold text-[12px] md:text-[20px]">
           Where You And Your Team Can
           <br /> Chat And Still Get The Job Done
         </p>
