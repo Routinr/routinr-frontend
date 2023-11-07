@@ -1,15 +1,13 @@
 import React from "react";
-import Topbar from "../components/Topbar";
 import Sidebar from "../components/Sidebar";
 const DashboardLayout = ({children }) => {
   return (
     <div>
-      <div className="w-[20%] h-screen fixed left-0 bg-black">
+      <div className="w-[20%] h-screen fixed left-0 bg-[#031A3E]">
         <Sidebar />
       </div>
-      <div className="w-[80%] ml-[20%] bg-red-700">
-        <Topbar />
-        <div className="h-[100vh]">{children}</div>
+      <div className="w-[80%] fixed ml-[20%] bg-[#031A3E] ">
+        <div className="h-screen">{children}</div>
       </div>
     </div>
   );
