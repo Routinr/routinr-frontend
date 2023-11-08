@@ -27,14 +27,15 @@ const MainSection = () => {
               <img src={Ellipse} alt="ellipse" />
             </div>
             <h1 className="lg:text-5xl text-3xl font-semibold mt-5 leading-snug ">
-              Productivity
-              Has<br /> Never Been<br /> Easier
+              Productivity Has
+              <br /> Never Been
+              <br /> Easier
             </h1>
             <p className="mt-5 text-[15px] lg:text-[20px]">
               Discover The Easiest Way To Manage Your Time <br /> And Be
               Productive Alongside Collaborating With <br /> Your Teams
             </p>
-            <button className="bg-[#386BD9] text-white font-bold py-2 px-4 rounded-tl-lg rounded-br-lg mt-10 mb-10 md:mb-0 md:mt-5">
+            <button className="bg-[#386BD9] hover:bg-transparent hover:text-[#386BD9] border-[#386BD9] border-[1px] text-white font-bold py-2 px-4 rounded-tl-lg rounded-br-lg mt-10 mb-10 md:mb-0 md:mt-5">
               Get Started
             </button>
             <div className="hidden md:block absolute left-[550px] buttom-[50px]">

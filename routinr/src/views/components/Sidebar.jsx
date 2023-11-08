@@ -1,6 +1,7 @@
 import React from "react";
 import dashboadlogo from "../../assets/icons/dashboardlogo.png";
 import task from "../../assets/icons/task.png";
+import tak from "../../assets/icons/tak.png";
 import noote from "../../assets/icons/noote.png";
 import settings from "../../assets/icons/setting.png";
 import heelp from "../../assets/icons/heelp.png";
@@ -19,7 +20,7 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="mt-5 flex gap-3 items-center py-2 px-4 border-white border-[1px] rounded-lg cursor-pointer hover:bg-[#A0C4E2]">
-        <img className="w-[20px] h-[20px]" src={task} alt="task" />
+        <img className="w-[20px] h-[20px]" src={tak} alt="task" />
         <Link to={"/tasks"}>
           <h1 className="text-md">Tasks</h1>
         </Link>

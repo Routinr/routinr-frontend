@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
       <div className="flex gap-[30px]">
         {isMobile ? (
-          <div className="flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30">
+          <div className="flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30  rounded-2xl ">
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>Home</Link>
             </button>
@@ -48,10 +48,10 @@ const Navbar = () => {
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>About</Link>
             </button>
-            <button className="bg-transparent underline text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-transparent underline text-white hover:text-purple-500 font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
-            <button className="bg-[#386BD9] text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-[#386BD9] hover:bg-transparent border-[1px] border-[#386BD9] cursor-pointer text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/signup"}>Sign Up</Link>
             </button>
           </div>
@@ -66,11 +66,16 @@ const Navbar = () => {
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>About</Link>
             </button>
-            <button className="bg-transparent underline text-[#386BD9]  font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-transparent underline text-[#386BD9] hover:text-purple-500  font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
-            <button className="bg-[#386BD9] text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
-              <Link to={"/signup"}>Sign Up</Link>
+            <button>
+              <Link
+                className="bg-[#386BD9] hover:bg-transparent border-[1px] border-[#386BD9] hover:text-[#386BD9] cursor-pointer text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg"
+                to={"/signup"}
+              >
+                Sign Up
+              </Link>
             </button>
           </div>
         )}
