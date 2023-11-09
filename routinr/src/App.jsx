@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/helpcenter" exact element={<HelpCenter />} />
         <Route path="/notes" exact element={<Notes />} />
-        <Route path="/sethings" exact element={<Sethings />} />
+        <Route path="/settings" exact element={<Sethings />} />
         <Route path="/tasks" exact element={<Tasks />} />
       </Routes>
     </BrowserRouter>
