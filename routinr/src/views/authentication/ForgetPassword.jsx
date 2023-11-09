@@ -16,7 +16,7 @@ const ForgetPassword = () => {
       >
         <div className="w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
-            Welcome Back :)
+            Forgot Password ?
           </h1>
           <form action="" className="flex flex-col">
             <input
@@ -27,16 +27,16 @@ const ForgetPassword = () => {
               className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
-            <button type="submit" className="">
+            <Link to={"/recoverpassword"} type="submit" className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"
                 className="w-[40px] h-[40px] float-right ml-2 my-2"
               />
-            </button>
+            </Link>
           </form>
 
-          <div className="flex justify-between w-full mb-5 custom-sm:flex-col">
+          <div className="flex justify-between flex-row w-full mt-7 ">
             <Link
               to={"/signup"}
               className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:mt-3 custom-sm:text-[14px]" 

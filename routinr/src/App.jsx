@@ -8,6 +8,8 @@ import './index.css'
 import HomePage from "./views/HomePage.jsx";
 import Signup from "./views/authentication/Signup.jsx";
 import Login from "./views/authentication/Login.jsx";
+import ForgetPassword from "./views/authentication/ForgetPassword.jsx"
+import RecoverPassword from './views/authentication/RecoverPassword.jsx';
 import Dashboard from './views/components/Dashboard';
 import HelpCenter from './views/components/HelpCenter.jsx';
 import Notes from './views/components/Notes.jsx';
@@ -21,6 +23,8 @@ const App = () => {
         <Route path="/" exact element={<HomePage />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/signup" exact element={<Signup />} />
+        <Route path="/forgotpassword" exact element={<ForgetPassword />} />
+        <Route path="/recoverpassword" exact element={<RecoverPassword />} />
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/helpcenter" exact element={<HelpCenter />} />
         <Route path="/notes" exact element={<Notes />} />

@@ -16,7 +16,7 @@ const RecoverPassword = () => {
       >
         <div className="w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
-            Welcome Back :)
+            Reset Password
           </h1>
           <form action="" className="flex flex-col">
             <input
@@ -26,14 +26,21 @@ const RecoverPassword = () => {
               placeholder="Password"
               className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
+            <input
+              type="password"
+              name=""
+              id=""
+              placeholder="confirm Password"
+              className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
+            />
 
-            <button type="submit" className="">
+            <Link to={"/login"} type="submit" className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"
                 className="w-[40px] h-[40px] float-right ml-2 my-2"
               />
-            </button>
+            </Link>
           </form>
         </div>
 
