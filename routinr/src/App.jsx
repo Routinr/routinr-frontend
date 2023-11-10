@@ -13,7 +13,7 @@ import RecoverPassword from './views/authentication/RecoverPassword.jsx';
 import Dashboard from './views/components/Dashboard';
 import HelpCenter from './views/components/HelpCenter.jsx';
 import Notes from './views/components/Notes.jsx';
-import Sethings from './views/components/Sethings.jsx';
+import Settings from './views/components/Settings.jsx';
 import Tasks from './views/components/Tasks.jsx';
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/helpcenter" exact element={<HelpCenter />} />
         <Route path="/notes" exact element={<Notes />} />
-        <Route path="/settings" exact element={<Sethings />} />
+        <Route path="/settings" exact element={<Settings />} />
         <Route path="/tasks" exact element={<Tasks />} />
       </Routes>
     </BrowserRouter>
