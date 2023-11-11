@@ -44,13 +44,13 @@ const Footer = () => {
             <a href="" target="_blank">
               <FaXTwitter
                 size={25}
-                className="hover:text-blue-500 text-white cursor-pointer"
+                className="hover:text-black text-white cursor-pointer"
               />
             </a>
             <a href="" target="_blank">
               <FaInstagram
                 size={25}
-                className="hover:text-blue-500 text-white cursor-pointer"
+                className="hover:text-orange-300 text-white cursor-pointer"
               />
             </a>
             <a href="" target="_blank">
@@ -62,13 +62,13 @@ const Footer = () => {
             <a href="" target="_blank">
               <FaTiktok
                 size={25}
-                className="hover:text-blue-500 text-white cursor-pointer"
+                className="hover:text-black text-white cursor-pointer"
               />
             </a>
             <a href="" target="_blank">
               <BsLinkedin
                 size={25}
-                className="hover:text-blue-500 text-white cursor-pointer"
+                className="hover:text-blue-800 text-white cursor-pointer"
               />
             </a>
           </div>
@@ -79,9 +79,6 @@ const Footer = () => {
         <h1 className="text-[15px]">PrivacyPolicy</h1>
       </div>
       <div className="bg-white w-full h-[1px]">
-        {/* <div className='flex justify-center'>
-          <img src={rec} alt="made with love by tech titans" />
-        </div> */}
       </div>
     </div>
   );
