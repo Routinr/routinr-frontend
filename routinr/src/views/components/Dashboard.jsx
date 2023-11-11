@@ -5,9 +5,11 @@ import Topbar from "./Topbar";
 const Dashboard = () => {
   return (
     <DashboardLayout>
-      <div className="h-[90vh] bg-white shadow-2xl rounded-2xl bg-opacity-5 w-[80%] p-5 mt-5 ">
-        <Topbar />
-        <div className="">welcome to dashboard page</div>
+      <div className="h-[90vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5  z-20 border-[0px] md:border-[1px] border-white border-opacity-10">
+        <div className="hidden md:block">
+          <Topbar />
+        </div>
+        <div className="text-white text-lg">welcome to dashboard page</div>
       </div>
     </DashboardLayout>
   );
