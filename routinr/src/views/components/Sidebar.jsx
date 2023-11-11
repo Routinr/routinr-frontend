@@ -1,10 +1,5 @@
 import React from "react";
 import dashboadlogo from "../../assets/icons/dashboardlogo.png";
-import task from "../../assets/icons/task.png";
-import tak from "../../assets/icons/tak.png";
-import noote from "../../assets/icons/noote.png";
-import settings from "../../assets/icons/setting.png";
-import heelp from "../../assets/icons/heelp.png";
 import { Link } from "react-router-dom";
 import { MdSpaceDashboard } from "react-icons/md";
 import { BiTask } from "react-icons/bi";
@@ -15,7 +10,7 @@ import { BiHelpCircle } from "react-icons/bi";
 
 const Sidebar = () => {
   return (
-    <div className="mt-5 ml-5 h-[600px] text-white p-5 bg-white shadow-2xl rounded-2xl bg-opacity-5 w-[200px]">
+    <div className="mt-5 ml-5 h-[600px] text-white p-5 bg-white shadow-2xl rounded-2xl bg-opacity-5 w-[200px] border-white border-[1px] border-opacity-10">
       <div>
         <img className="md:w-[120px]" src={dashboadlogo} alt="dashboard_logo" />
       </div>
