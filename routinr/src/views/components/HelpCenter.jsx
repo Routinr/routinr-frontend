@@ -5,7 +5,7 @@ import Topbar from './Topbar';
 const HelpCenter = () => {
   return (
     <DashboardLayout>
-      <div className="h-[90vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5  z-20 border-[0px] md:border-[1px] border-white border-opacity-10">
+      <div className="h-[100vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5  z-20 border-[0px] md:border-[1px] border-white border-opacity-10">
         <div className="hidden md:block">
           <Topbar />
         </div>
