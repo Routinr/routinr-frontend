@@ -21,7 +21,7 @@ const CardsSection = () => {
           </p>
         </div>
       </div>
-      <div className="bg-transparent  hover:bg-gradient-to-b from-[#031A3E] via-[#5E60CE] to-[#031A3E] md:w-[390px] w-[160px]  lg:w-[420px] p-5 flex justify-center">
+      <div className="bg-transparent  hover:bg-gradient-to-b from-[#031A3E] via-[#5E60CE] to-[#031A3E]  md:w-[390px] w-[160px]  lg:w-[420px] p-5 flex justify-center">
         <div className="flex flex-col md:bg-[#031A3E] justify-center  md:mt-0 items-center text-center border-[1px] border-[#BD6AF7] text-white p-2 md:p-5 lg:p-8 rounded-lg z-30 md:w-[350px] lg:w-[400px] w-[140px]">
           <img
             className="w-[100px] mt-5 md:mt-0 "
