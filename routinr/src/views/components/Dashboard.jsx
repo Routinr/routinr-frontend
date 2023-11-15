@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardLayout from "../layout/DashboardLayout";
 import water from "../../assets/icons/water.png";
+import sun from "../../assets/icons/sunicon.png";
 import "../../css/App.css"
 import Topbar from "./Topbar";
 
