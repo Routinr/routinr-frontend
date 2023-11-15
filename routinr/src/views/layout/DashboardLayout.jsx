@@ -8,7 +8,7 @@ const DashboardLayout = ({children }) => {
      setIsSidebarVisible(!isSidebarVisible);
    };
   return (
-    <div className="bg-[#031A3E]">
+    <div className="bg-[#031A3E] h-[100vh]">
       <div className="bg-[#031A3E] md:hidden p-5">
         <MobileTopbar toggleSidebar={toggleSidebar} />
       </div>
