@@ -8,6 +8,9 @@ import { useState } from 'react';
 import NoteDetails from './NoteDetails';
 import AddNote from './AddNote';
 
+// css styling
+import "../../css/App.css"
+
 const Notes = () => {
   const [selectedNote, setSelectedNote] = useState(null);
   
@@ -93,7 +96,7 @@ const Notes = () => {
 
   return (
     <DashboardLayout>
-      <div className="h-[100vh] md:h-[200vh] lg:h-[120vh] xl:h-[200vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5 z-20 border-[0px] md:border-[1px] border-white border-opacity-10 z-20 ">
+      <div className="dashboard-cont md:h-[200vh] lg:h-[120vh] xl:h-[200vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5 border-[0px] md:border-[1px] border-white border-opacity-10 z-20 overflow-scroll">
         <div className="hidden md:block">
           <Topbar />
         </div>
@@ -115,28 +118,28 @@ const Notes = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-5 w-full border-[1px] border-white p-2 rounded-md mt-10">
+        <div className="flex items-center gap-5 w-full rounded-md mt-10">
           <div>
-            <AiOutlineSearch className="text-white text-[20px]" />
+            <AiOutlineSearch className="text-white text-[25px]" />
           </div>
           <input
-            className="w-full bg-transparent text-white"
+            className="w-full bg-transparent text-white p-3 border-[1px] border-white rounded-md"
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search Notes"
           />
         </div>
-        <div className="flex flex-wrap gap-3  md:gap-5 justify-between text-white mt-20 ">
+        <div className="flex flex-wrap px-7 md:gap-5 justify-between text-white mt-20 ">
           {filteredData.map((item) => (
             <div
-              className={`border-[1px] border-white p-2 w-[150px] md:w-[300px] lg:w-[200px] rounded-md cursor-pointer ${
+              className={`border-[1px] border-white p-4 mb-3 w-[150px] sm:w-[300px] lg:w-[200px] rounded-md cursor-pointer ${
                 selectedNote === item.id ? "bg-gray-500" : ""
               }`}
               key={item.id}
               onClick={() => handleNoteClick(item.id)}
             >
-              <h2 className="text-[14px] md:text-[18px]">{item.heading}</h2>
+              <h2 className="text-[14px] font-bold mb-[10px] md:text-[18px]">{item.heading}</h2>
               <p className="text-[13px] md:text-[15px] ">
                 {selectedNote === item.id
                   ? item.description // Show full description if selected

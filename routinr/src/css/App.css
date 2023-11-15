@@ -38,3 +38,10 @@ form .input {
 .dashboard-cont::-webkit-scrollbar{
     display: none;
 }
+
+/* note styling */
+/* .note-cont{
+    display: grid;
+    grid-template-columns: 1, 1, 1;
+    place-items: center;
+} */
