@@ -21,7 +21,7 @@ const DashboardLayout = ({children }) => {
         <Sidebar />
       </div>
       <div className="w-full md:w-[80%] md:ml-[20%] bg-[#031A3E] z-0 p-5 ">
-        <div className="h-full flex justify-center">
+        <div className="h-full flex lg:justify-center md:justify-end md:pr-10">
           {children}
         </div>
       </div>

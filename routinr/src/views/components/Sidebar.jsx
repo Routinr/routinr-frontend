@@ -9,7 +9,7 @@ import { BiHelpCircle } from "react-icons/bi";
 
 const Sidebar = () => {
   return (
-    <div className="mt-5 ml-5 h-[90vh] text-white p-5 bg-white shadow-2xl rounded-2xl bg-opacity-5 w-[200px] border-white border-[1px] border-opacity-10">
+    <div className="mt-6 ml-8 h-[90vh] text-white p-5 bg-white shadow-2xl rounded-2xl bg-opacity-5 w-[200px] border-white border-[1px] border-opacity-10">
       <div>
         <img className="md:w-[120px]" src={dashboadlogo} alt="dashboard_logo" />
       </div>

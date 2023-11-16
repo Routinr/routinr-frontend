@@ -96,17 +96,17 @@ const Notes = () => {
 
   return (
     <DashboardLayout>
-      <div className="dashboard-cont md:h-[200vh] lg:h-[120vh] xl:h-[200vh] md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:w-[80%] md:p-5 border-[0px] md:border-[1px] border-white border-opacity-10 z-20 overflow-scroll">
+      <div className="dashboard-cont h-[90vh] mt-1 pb-3 md:bg-white md:shadow-2xl md:rounded-2xl md:bg-opacity-5 w-full md:mr-[-30px] md:w-[80%] md:p-5 border-[0px] md:border-[1px] border-white border-opacity-10 z-20 overflow-scroll">
         <div className="hidden md:block">
           <Topbar />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center p-2">
           <div className="text-white text-lg font-bold mt-2">
             Notes Are Reminders,
             <br /> Check Them Out.
           </div>
           <div>
-            <div>
+            <div className='mt-[-20px]'>
               <h1 className="text-[#56CFE1] text-[13px]">New Notes</h1>
               <div
                 className="w-[80px] h-[40px] md:w-[100px] md:h-[40px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2"
@@ -118,7 +118,7 @@ const Notes = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-5 w-full rounded-md mt-10">
+        <div className="flex pl-[10px] items-center gap-5 w-[95%] rounded-md mt-10">
           <div>
             <AiOutlineSearch className="text-white text-[25px]" />
           </div>
@@ -130,10 +130,10 @@ const Notes = () => {
             placeholder="Search Notes"
           />
         </div>
-        <div className="flex flex-wrap px-7 md:gap-5 justify-between text-white mt-20 ">
+        <div className="flex flex-wrap lg:px-8 justify-evenly text-white mt-14 md:gap-5 md:justify-start md:px-5">
           {filteredData.map((item) => (
             <div
-              className={`border-[1px] border-white p-4 mb-3 w-[150px] sm:w-[300px] lg:w-[200px] rounded-md cursor-pointer ${
+              className={`border-[1px] border-white p-4 mb-3 lg:w-[200px] rounded-md cursor-pointer md:w-full ${
                 selectedNote === item.id ? "bg-gray-500" : ""
               }`}
               key={item.id}
