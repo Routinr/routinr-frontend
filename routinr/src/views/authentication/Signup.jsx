@@ -12,21 +12,26 @@ const Signup = () => {
   const [conPass, setConPass] = useState('')
 
   const handleSignUp = async () => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      // Password doesn't meet the requirements
+      console.error('Password must be at least 8 characters long and include letters, numbers, and symbols.');
+      return;
+    }
+
+    if (conPass != password){
+      console.error('passwords does not match')
+    }
     try {
-      const response = await fetch('http://localhost:3000/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      const response = await axios.post('https://routinr-backend.onrender.com/auth/register', {
           username: username,
           email: email,
           password: password,
           conPass: conPass,
-        }),
       });
 
-      if (response.ok) {
+      if (response==200) {
         console.log('signup successfull')
       } else{
         console.error('signup failed')
@@ -56,6 +61,7 @@ const Signup = () => {
               value={username}
               type="text"
               name=""
+              placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
@@ -64,6 +70,7 @@ const Signup = () => {
               value={email}
               type="email"
               name=""
+              placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
@@ -72,6 +79,7 @@ const Signup = () => {
               value={password}
               type="password"
               name=""
+              placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
@@ -80,6 +88,7 @@ const Signup = () => {
               value={conPass}
               type="password"
               name=""
+              placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
