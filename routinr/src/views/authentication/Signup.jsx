@@ -49,37 +49,37 @@ const Signup = () => {
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
           </h1>
-          <form action="" className="flex flex-col" onSubmit={(e)=> submit(e)}>
+          <form action="" className="flex flex-col">
             <input
-              onchange={(e)=>setUsername(e.target.id)}
-              id={username}
+              onchange={(e)=>setUsername(e.target.value)}
+              id="Username"
+              value={username}
               type="text"
               name=""
-              placeholder="Username"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setEmail(e.target.id)}
-              id={email}
+              onchange={(e)=>setEmail(e.target.value)}
+              id="Email"
+              value={email}
               type="email"
               name=""
-              placeholder="Email"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setPassword(e.target.id)}
-              id={password}
+              onchange={(e)=>setPassword(e.target.value)}
+              id="Password"
+              value={password}
               type="password"
               name=""
-              placeholder="Password"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setConPass(e.target.id)}
-              id={conPass}
+              onchange={(e)=>setConPass(e.target.value)}
+              id="confirmPassword"
+              value={conPass}
               type="password"
               name=""
-              placeholder="Confirm Password"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
