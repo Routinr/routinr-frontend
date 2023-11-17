@@ -1,10 +1,41 @@
-import React from "react";
+import React,{useState} from "react";
+import axios from 'axios'
 import { Link } from "react-router-dom";
 import "../../css/App.css";
 import SubmitBtn from "../../assets/icons/signup.png";
 import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Signup = () => {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [conPass, setConPass] = useState('')
+
+  const handleSignUp = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+          conPass: conPass,
+        }),
+      });
+
+      if (response.ok) {
+        console.log('signup successfull')
+      } else{
+        console.error('signup failed')
+      }
+    } catch (err) {
+      console.error('error during signup:', error)
+    }
+  }
+
   return (
     <div className="main w-full h-[100vh] grid place-items-center" >
       <div
@@ -18,37 +49,41 @@ const Signup = () => {
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
           </h1>
-          <form action="" className="flex flex-col">
+          <form action="" className="flex flex-col" onSubmit={(e)=> submit(e)}>
             <input
+              onchange={(e)=>setUsername(e.target.id)}
+              id={username}
               type="text"
               name=""
-              id=""
               placeholder="Username"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
+              onchange={(e)=>setEmail(e.target.id)}
+              id={email}
               type="email"
               name=""
-              id=""
               placeholder="Email"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
+              onchange={(e)=>setPassword(e.target.id)}
+              id={password}
               type="password"
               name=""
-              id=""
               placeholder="Password"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
+              onchange={(e)=>setConPass(e.target.id)}
+              id={conPass}
               type="password"
               name=""
-              id=""
               placeholder="Confirm Password"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
-            <button type="submit" className="">
+            <button type="submit" onClick={handleSignUp} className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"

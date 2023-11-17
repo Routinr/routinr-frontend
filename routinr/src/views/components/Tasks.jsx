@@ -21,19 +21,19 @@ const Tasks = () => {
         <div className="flex gap-[20px] mt-10">
           <div>
             <h1 className="text-[#56CFE1] text-[13px]">Todo</h1>
-            <div className="w-[100px]  md:w-[150px] h-[50px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
+            <div className="w-[100px]  md:w-[150px] h-[70px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
               <BsPlusCircle className="text-[#56CFE1]" />
             </div>
           </div>
           <div>
             <h1 className="text-[#56CFE1] text-[13px]">In Progress</h1>
-            <div className="w-[100px]  md:w-[150px] h-[50px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
+            <div className="w-[100px]  md:w-[150px] h-[70px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
               <BsPlusCircle className="text-[#56CFE1]" />
             </div>
           </div>
           <div>
             <h1 className="text-[#56CFE1] text-[13px]">Completed</h1>
-            <div className="w-[100px]  md:w-[150px] h-[50px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
+            <div className="w-[100px]  md:w-[150px] h-[70px] border-[1px] border-[#56CFE1] border-dashed flex justify-center items-center cursor-pointer md:mt-2 rounded-md">
               <BsPlusCircle className="text-[#56CFE1]" />
             </div>
           </div>
@@ -75,7 +75,7 @@ const Tasks = () => {
           <div className="flex justify-between">
             <div className="text-white">
               <h1 className="mt-5">Priority</h1>
-              <div className="w-[100px]  md:w-[150px] h-fit  border-white border-[1px] mt-2 text-center rounded-tl-lg rounded-tr-lg">
+              <div className="w-[100px] md:w-[150px] h-fit  border-white border-[1px] mt-2 text-center rounded-tl-lg rounded-tr-lg">
                 <div className="p-1">
                   <h1>Design For Routinr</h1>
                   <div className="flex items-center justify-center gap-2">
