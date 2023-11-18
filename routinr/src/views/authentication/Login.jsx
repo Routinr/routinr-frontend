@@ -11,7 +11,7 @@ const Login = () => {
   const [loginUser, setLoginUser] = useState({
     email: "",
     password: "",
-  })
+  });
 
   const handleUserLogin = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ const Login = () => {
       ...prevFormData,
       [name]: value,
     }));
-  }
+  };
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -28,20 +28,21 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    try{
+    try {
       const response = await axios.post(
-        "https://routinr-backend.onrender.com/auth/login", loginUser
+        "https://routinr-backend.onrender.com/auth/login",
+        loginUser
       );
 
       if (response == 200) {
         navigate("/dashboard");
       } else {
-        alert("invalid login credentials")
+        alert("invalid login credentials");
       }
     } catch (err) {
-      console.error("error during login", err)
+      console.error("error during login", err);
     }
-  }
+  };
 
   return (
     <div className="main w-full h-[100vh] grid place-items-center">
@@ -98,7 +99,7 @@ const Login = () => {
           <div className="flex justify-between w-full mb-5 custom-sm:flex-col">
             <Link
               to={"/signup"}
-              className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:mt-3 custom-sm:text-[14px]" 
+              className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:mt-3 custom-sm:text-[14px]"
             >
               Sign Up
             </Link>

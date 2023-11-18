@@ -32,24 +32,20 @@ const Signup = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!@#$%^&*])[A-Za-z\d-_!@#$%^&*]{8,}$/;
-    ;
-
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!@#$%^&*])[A-Za-z\d-_!@#$%^&*]{8,}$/;
     if (!passwordRegex.test(registerUser.password)) {
       // Password doesn't meet the requirements
-      console.error(
-        "Password must be at least 8 characters long and include letters, numbers, and symbols."
-      );
+      alert("Password must be at least 8 characters long and include letters, numbers, and symbols.")
       return;
     }
 
     try {
       const response = await axios.post(
-        "https://routinr-backend.onrender.com4/auth/register",
+        "https://routinr-backend.onrender.com/auth/register",
         registerUser
       );
 
-      if (response == 200) {
+      if (response.status >= 200 && response.status < 300) {
         console.log("signup successfull");
         navigate("/dashboard");
       } else {
