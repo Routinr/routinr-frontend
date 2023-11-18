@@ -4,10 +4,6 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll([
-        '/src/views/HomePage.jsx',
-        '/src/css/App.css',
-        '/src/views/authentication/Signup.jsx',
-        '/src/views/authentication/Login.jsx',
         // Add other assets to cache as needed
       ]);
     })

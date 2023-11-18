@@ -6,30 +6,38 @@ import SubmitBtn from "../../assets/icons/signup.png";
 import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Signup = () => {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [conPass, setConPass] = useState('')
+  const [registerUser, setRegisterUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    conPass: "",
+  })
 
-  const handleSignUp = async () => {
+  const handleUserRegister = (e) => {
+    const {name, value} = e.target;
+    setRegisterUser((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
+
+  const handleSignUp = async (e) => {
+    
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-    if (!passwordRegex.test(password)) {
+    if (!passwordRegex.test(registerUser.password)) {
       // Password doesn't meet the requirements
       console.error('Password must be at least 8 characters long and include letters, numbers, and symbols.');
       return;
     }
 
-    if (conPass != password){
+    if (registerUser.conPass != registerUser.password){
       console.error('passwords does not match')
     }
+
+    e.preventDefault();
     try {
-      const response = await axios.post('https://routinr-backend.onrender.com/auth/register', {
-          username: username,
-          email: email,
-          password: password,
-          conPass: conPass,
-      });
+      const response = await axios.post('https://routinr-backend.onrender.com/auth/register', registerUser);
 
       if (response==200) {
         console.log('signup successfull')
@@ -54,45 +62,45 @@ const Signup = () => {
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center">
             Create account
           </h1>
-          <form action="" className="flex flex-col">
+          <form action="" className="flex flex-col" onSubmit={handleSignUp}>
             <input
-              onchange={(e)=>setUsername(e.target.value)}
+              onchange={handleUserRegister}
               id="Username"
-              value={username}
+              value={registerUser.username}
               type="text"
               name=""
               placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setEmail(e.target.value)}
+              onchange={handleUserRegister}
               id="Email"
-              value={email}
+              value={registerUser.email}
               type="email"
               name=""
               placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setPassword(e.target.value)}
+              onchange={handleUserRegister}
               id="Password"
-              value={password}
+              value={registerUser.password}
               type="password"
               name=""
               placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={(e)=>setConPass(e.target.value)}
+              onchange={handleUserRegister}
               id="confirmPassword"
-              value={conPass}
+              value={registerUser.conPass}
               type="password"
               name=""
               placeholder="something"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
-            <button type="submit" onClick={handleSignUp} className="">
+            <button type="submit" className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"
