@@ -1,10 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../css/App.css";
 import SubmitBtn from "../../assets/icons/signup.png";
 import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(true);
+  const [loginUser, setLoginUser] = useState({
+    email: "",
+    password: "",
+  })
+
+  const handleUserLogin = (e) => {
+    const { name, value } = e.target;
+    setLoginUser((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try{
+      const response = await axios.post(
+        "https://routinr-backend.onrender.com/auth/login", loginUser
+      );
+
+      if (response == 200) {
+        navigate("/dashboard");
+      } else {
+        alert("invalid login credentials")
+      }
+    } catch (err) {
+      console.error("error during login", err)
+    }
+  }
+
   return (
     <div className="main w-full h-[100vh] grid place-items-center">
       <div
@@ -18,21 +56,35 @@ const Login = () => {
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
             Welcome Back :)
           </h1>
-          <form action="" className="flex flex-col">
+          <form action="" className="flex flex-col" onSubmit={handleLogin}>
             <input
+              onChange={handleUserLogin}
               type="text"
-              name=""
+              name="email"
               id=""
-              placeholder="Username"
+              value={loginUser.email}
+              placeholder="Email"
               className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
-            <input
-              type="password"
-              name=""
-              id=""
-              placeholder="Password"
-              className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
-            />
+            <div className="flex w-full">
+              <input
+                onChange={handleUserLogin}
+                required
+                id="Password"
+                value={loginUser.password}
+                type={showPassword ? "password" : "text"}
+                name="password"
+                placeholder="Password"
+                className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25 w-[85%]"
+              />
+              <button
+                type="button"
+                onClick={togglePassword}
+                className="w-[15%] text-white pb-3"
+              >
+                {showPassword ? "Show" : "Hide"}
+              </button>
+            </div>
 
             <button type="submit" className="">
               <img

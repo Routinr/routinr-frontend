@@ -1,56 +1,67 @@
-import React,{useState} from "react";
-import axios from 'axios'
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/App.css";
 import SubmitBtn from "../../assets/icons/signup.png";
 import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
   const [registerUser, setRegisterUser] = useState({
+    firstname: "",
+    lastname: "",
     username: "",
     email: "",
     password: "",
-    conPass: "",
-  })
+    number: "",
+  });
 
   const handleUserRegister = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setRegisterUser((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
-  }
+  };
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSignUp = async (e) => {
-    
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    e.preventDefault();
+    const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!@#$%^&*])[A-Za-z\d-_!@#$%^&*]{8,}$/;
+    ;
 
     if (!passwordRegex.test(registerUser.password)) {
       // Password doesn't meet the requirements
-      console.error('Password must be at least 8 characters long and include letters, numbers, and symbols.');
+      console.error(
+        "Password must be at least 8 characters long and include letters, numbers, and symbols."
+      );
       return;
     }
 
-    if (registerUser.conPass != registerUser.password){
-      console.error('passwords does not match')
-    }
-
-    e.preventDefault();
     try {
-      const response = await axios.post('https://routinr-backend.onrender.com/auth/register', registerUser);
+      const response = await axios.post(
+        "https://routinr-backend.onrender.com/auth/register",
+        registerUser
+      );
 
-      if (response==200) {
-        console.log('signup successfull')
-      } else{
-        console.error('signup failed')
+      if (response == 200) {
+        console.log("signup successfull");
+        navigate("/dashboard");
+      } else {
+        console.error("signup failed");
       }
     } catch (err) {
-      console.error('error during signup:', error)
+      console.error("error during signup:", err);
     }
-  }
+  };
 
   return (
-    <div className="main w-full h-[100vh] grid place-items-center" >
+    <div className="main w-full h-[100vh] grid place-items-center">
       <div
         className="auth-cont flex
         w-2/3
@@ -64,41 +75,74 @@ const Signup = () => {
           </h1>
           <form action="" className="flex flex-col" onSubmit={handleSignUp}>
             <input
-              onchange={handleUserRegister}
+              onChange={handleUserRegister}
+              required
+              id="firstname"
+              value={registerUser.firstname}
+              type="text"
+              name="firstname"
+              placeholder="First Name"
+              className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
+            />
+            <input
+              onChange={handleUserRegister}
+              required
+              id="lastname"
+              value={registerUser.lastname}
+              type="text"
+              name="lastname"
+              placeholder="Last Name"
+              className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
+            />
+            <input
+              onChange={handleUserRegister}
+              required
               id="Username"
               value={registerUser.username}
               type="text"
-              name=""
-              placeholder="something"
+              name="username"
+              placeholder="Username"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={handleUserRegister}
+              onChange={handleUserRegister}
+              required
               id="Email"
               value={registerUser.email}
               type="email"
-              name=""
-              placeholder="something"
+              name="email"
+              placeholder="Email"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
             <input
-              onchange={handleUserRegister}
-              id="Password"
-              value={registerUser.password}
-              type="password"
-              name=""
-              placeholder="something"
+              onChange={handleUserRegister}
+              required
+              id="number"
+              value={registerUser.number}
+              type="text"
+              name="number"
+              placeholder="Phone number"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
-            <input
-              onchange={handleUserRegister}
-              id="confirmPassword"
-              value={registerUser.conPass}
-              type="password"
-              name=""
-              placeholder="something"
-              className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
-            />
+            <div className="flex w-full">
+              <input
+                onChange={handleUserRegister}
+                required
+                id="Password"
+                value={registerUser.password}
+                type={showPassword ? "password" : "text"}
+                name="password"
+                placeholder="Password"
+                className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25 w-[85%]"
+              />
+              <button
+                type="button"
+                onClick={togglePassword}
+                className="w-[15%] text-white pb-3"
+              >
+                {showPassword ? "Show" : "Hide"}
+              </button>
+            </div>
 
             <button type="submit" className="">
               <img
@@ -122,7 +166,7 @@ const Signup = () => {
         <img
           src={DesktopAuth}
           alt=""
-          className="desktop-img flex h-[500px] ml-[35px]"
+          className="desktop-img flex h-[545px] ml-[35px]"
         />
       </div>
     </div>
