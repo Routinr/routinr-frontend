@@ -9,12 +9,12 @@ const Signup = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [registerUser, setRegisterUser] = useState({
-    firstname: "",
-    lastname: "",
+    first_name: "",
+    last_name: "",
     username: "",
     email: "",
     password: "",
-    number: "",
+    phone_number: "",
   });
 
   const handleUserRegister = (e) => {
@@ -45,7 +45,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://routinr-backend.onrender.com/auth/register",
+        "https://routinr-backend.onrender.com4/auth/register",
         registerUser
       );
 
@@ -78,9 +78,9 @@ const Signup = () => {
               onChange={handleUserRegister}
               required
               id="firstname"
-              value={registerUser.firstname}
+              value={registerUser.first_name}
               type="text"
-              name="firstname"
+              name="first_name"
               placeholder="First Name"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
@@ -88,9 +88,9 @@ const Signup = () => {
               onChange={handleUserRegister}
               required
               id="lastname"
-              value={registerUser.lastname}
+              value={registerUser.last_name}
               type="text"
-              name="lastname"
+              name="last_name"
               placeholder="Last Name"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
@@ -118,9 +118,9 @@ const Signup = () => {
               onChange={handleUserRegister}
               required
               id="number"
-              value={registerUser.number}
+              value={registerUser.phone_number}
               type="text"
-              name="number"
+              name="phone_number"
               placeholder="Phone number"
               className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
