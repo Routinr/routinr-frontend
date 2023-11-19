@@ -7,34 +7,35 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isNavbarNotVisible, setIsNavbarNotVisible] = useState(true)
+  const [isNavbarNotVisible, setIsNavbarNotVisible] = useState(true);
 
-  const toggleNavbar = () =>{
-    setIsNavbarNotVisible(!isNavbarNotVisible)
-  }
+  const toggleNavbar = () => {
+    setIsNavbarNotVisible(!isNavbarNotVisible);
+  };
 
   useEffect(() => {
-    // Add an event listener to track screen width changes
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 760); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 760);
     };
 
-    // Initial check for mobile/desktop view
     handleResize();
 
-    // Add the event listener
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+
   return (
     <div className="flex justify-between">
       <div>
-        <img className="md:hidden w-[70px] md:w-full" src={dashboardlogo} alt="logo" />
+        <img
+          className="md:hidden w-[70px] md:w-full"
+          src={dashboardlogo}
+          alt="logo"
+        />
         <img
           className="hidden md:block w-[70px] md:w-full"
           src={dashboardlogo}
@@ -42,9 +43,12 @@ const Navbar = () => {
         />
       </div>
       <div className="flex gap-[30px]">
-        {isMobile ? (
-          isNavbarNotVisible && (
-            <div className="flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30  rounded-2xl ">
+        {isMobile && (
+          <div
+            className={`flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30  rounded-2xl ${
+              isNavbarNotVisible ? "hidden" : ""
+            }`}
+          >
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>Home</Link>
             </button>
@@ -61,8 +65,8 @@ const Navbar = () => {
               <Link to={"/signup"}>Sign Up</Link>
             </button>
           </div>
-          )
-        ) : (
+        )}
+        {!isMobile && (
           <div className="hidden md:flex gap-[30px]">
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>Home</Link>
@@ -87,14 +91,8 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="md:hidden" onClick={() => setIsMobile(!isMobile)}>
-        <img
-          className="w-[35px]"
-          src={harmbugger}
-          width={40}
-          alt="menu-icon"
-          onClick={toggleNavbar} 
-        />
+      <div className="md:hidden cursor-pointer" onClick={toggleNavbar}>
+        <img className="w-[35px]" src={harmbugger} width={40} alt="menu-icon" />
       </div>
     </div>
   );
