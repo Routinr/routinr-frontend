@@ -9,7 +9,7 @@ import { BiHelpCircle } from "react-icons/bi";
 
 const MobileSidebar = () => {
   return (
-    <div className=" h-[500px] text-white p-3 bg-gradient-to-b from-[#031A3E] via-[#5E60CE] to-[#031A3E] w-[280px] z-20 flex flex-col justify-center items-center z-30 border-[1px] border-white border-opacity-10">
+    <div className=" h-[500px] text-white p-3 bg-gradient-to-b from-[#031A3E] via-[#193366] to-[#031A3E] w-[280px] z-20 flex flex-col justify-center items-center z-30 border-[1px] border-white border-opacity-10">
       <div>
         <img className="w-[100px]" src={dashboadlogo} alt="dashboard_logo" />
       </div>

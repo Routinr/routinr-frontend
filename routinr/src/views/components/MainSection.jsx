@@ -6,6 +6,7 @@ import maskcircle from "../../assets/icons/maskcircle.png";
 import Ellipse4 from "../../assets/icons/Ellipse4.png";
 import Ellipse6 from "../../assets/icons/Ellipse6.png";
 import circlee from "../../assets/icons/circlee.png";
+import { Link } from 'react-router-dom';
 
 const MainSection = () => {
   return (
@@ -36,7 +37,7 @@ const MainSection = () => {
               Productive Alongside Collaborating With <br /> Your Teams
             </p>
             <button className="bg-[#386BD9] hover:bg-transparent hover:text-[#386BD9] border-[#386BD9] border-[1px] text-white font-bold py-2 px-4 rounded-tl-lg rounded-br-lg mt-10 mb-10 md:mb-0 md:mt-5">
-              Get Started
+              <Link to={"/signup"}>Get Started</Link>
             </button>
             <div className="hidden md:block absolute left-[550px] buttom-[50px]">
               <img src={circlee} alt="circle" />
