@@ -7,6 +7,7 @@ import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const [loginUser, setLoginUser] = useState({
     email: "",
@@ -32,13 +33,19 @@ const Login = () => {
       const response = await axios.post(
         "https://routinr-backend.onrender.com/auth/login",
         loginUser
-      );
+      )
 
-      if (response == 200) {
-        navigate("/dashboard");
-      } else {
-        alert("invalid login credentials");
+      if (response.data.error) {
+        setLoginError(response.data.error);
+        return;
       }
+      const token = response.data.token; // Extract the token from the response object
+      console.log(token); // Check if you're getting the token correctly
+  
+      // Store the token securely in the browser's localStorage
+      localStorage.setItem('accessToken', token);
+
+      navigate("/dashboard")
     } catch (err) {
       console.error("error during login", err);
     }
@@ -58,6 +65,7 @@ const Login = () => {
             Welcome Back :)
           </h1>
           <form action="" className="flex flex-col" onSubmit={handleLogin}>
+            <h1>{loginError}</h1>
             <input
               onChange={handleUserLogin}
               type="text"
