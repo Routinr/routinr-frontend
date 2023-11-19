@@ -7,11 +7,11 @@ const SocialSection = () => {
   return (
     <div className="w-full  overflow-hidden">
       <Marquee speed={50}>
-        <img className='lg:w-full md:w-[800px]  w-[500px]' src={socialicon} alt="logo" />
+        <img className='lg:w-full md:w-[800px] w-[500px]' src={socialicon} alt="logo" />
       </Marquee>
       <div className="mt-10">
         <Marquee speed={50}>
-          <img className='lg:w-full md:w-[800px]  w-[500px]' src={socialicon1} alt="logo" />
+          <img className='lg:w-full md:w-[800px] w-[500px]' src={socialicon1} alt="logo" />
         </Marquee>
       </div>
     </div>

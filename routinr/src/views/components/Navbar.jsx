@@ -1,12 +1,17 @@
 import React from "react";
 import harmbugger from "../../assets/icons/menu.png";
-import logo from "../../assets/images/logo.png";
+// import logo from "../../assets/images/logo.png";
 import dashboardlogo from "../../assets/icons/dashboardlogo.png";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isNavbarNotVisible, setIsNavbarNotVisible] = useState(true)
+
+  const toggleNavbar = () =>{
+    setIsNavbarNotVisible(!isNavbarNotVisible)
+  }
 
   useEffect(() => {
     // Add an event listener to track screen width changes
@@ -29,7 +34,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between">
       <div>
-        <img className="md:hidden w-[70px] md:w-full" src={logo} alt="logo" />
+        <img className="md:hidden w-[70px] md:w-full" src={dashboardlogo} alt="logo" />
         <img
           className="hidden md:block w-[70px] md:w-full"
           src={dashboardlogo}
@@ -38,7 +43,8 @@ const Navbar = () => {
       </div>
       <div className="flex gap-[30px]">
         {isMobile ? (
-          <div className="flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30  rounded-2xl ">
+          isNavbarNotVisible && (
+            <div className="flex flex-col absolute top-44 right-10 w-[200px] p-5 bg-[#386BD9] gap-2 z-30  rounded-2xl ">
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>Home</Link>
             </button>
@@ -55,6 +61,7 @@ const Navbar = () => {
               <Link to={"/signup"}>Sign Up</Link>
             </button>
           </div>
+          )
         ) : (
           <div className="hidden md:flex gap-[30px]">
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
@@ -80,13 +87,13 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <div className="md:hidden">
+      <div className="md:hidden" onClick={() => setIsMobile(!isMobile)}>
         <img
           className="w-[35px]"
           src={harmbugger}
           width={40}
           alt="menu-icon"
-          onClick={() => setIsMobile(!isMobile)}
+          onClick={toggleNavbar} 
         />
       </div>
     </div>

@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import MobileTopbar from "../components/MobileTopbar";
 import MobileSidebar from "../components/MobileSidebar";
 const DashboardLayout = ({children }) => {
-   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
    const toggleSidebar = () => {
      setIsSidebarVisible(!isSidebarVisible);
    };
