@@ -11,6 +11,7 @@ module.exports = {
       },
       screens: {
         'custom-sm': '200px',
+        'card-sm': '370px'
       }
     },
   },

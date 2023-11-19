@@ -32,11 +32,11 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="pt-28 md:pt-12  w-full lg:p-24 p-3">
+      <div className="pt-10 md:pt-12  w-full lg:p-24 p-3">
         <CardsSection />
       </div>
       <div className="w-full p-0 pt-1 md:pt-5">
-        <h1 className="lg:text-6xl md:text-3xl text-3xl text-center font-bold text-white mt-28 leading-snug">
+        <h1 className="lg:text-6xl md:text-3xl text-3xl text-center font-bold text-white mt-10 md:mt-20 lg:mt-28 leading-snug">
           Integrate With Tools You Love
         </h1>
         <p className="text-white pt-5 text-center text-xl">
@@ -44,7 +44,7 @@ const HomePage = () => {
           <br /> Your Popular Tools
         </p>
       </div>
-      <div className="pt-20 p-5">
+      <div className="pt-10 md:pt-20 lg:pt-20 p-5">
         <SocialSection />
       </div>
       <div className="h-fit md:h-[350px] bg-[#153362]">
