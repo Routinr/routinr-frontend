@@ -2,12 +2,17 @@ import React from "react";
 import harmbugger from "../../assets/icons/menu.png";
 // import logo from "../../assets/images/logo.png";
 import dashboardlogo from "../../assets/icons/dashboardlogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isNavbarNotVisible, setIsNavbarNotVisible] = useState(true)
+  const navigate = useNavigate();
+
+  const navigateSignup = () =>{
+    navigate("/signup")
+  }
 
   const toggleNavbar = () =>{
     setIsNavbarNotVisible(!isNavbarNotVisible)
@@ -57,8 +62,11 @@ const Navbar = () => {
             <button className="bg-transparent underline text-white hover:text-purple-500 font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
-            <button className="bg-[#386BD9] hover:bg-transparent border-[1px] border-[#386BD9] cursor-pointer text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
-              <Link to={"/signup"}>Sign Up</Link>
+            <button 
+            className="bg-[#386BD9] border-[1px] cursor-pointer text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg" 
+            onClick={navigateSignup}
+            >
+              Sign Up
             </button>
           </div>
           )
@@ -73,17 +81,15 @@ const Navbar = () => {
             <button className="bg-transparent text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/"}>About</Link>
             </button>
-            <button className="bg-transparent underline text-[#386BD9] hover:text-purple-500  font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
+            <button className="bg-transparent text-[#386BD9] hover:text-purple-500  font-bold py-1 px-4 rounded-tl-lg rounded-br-lg">
               <Link to={"/login"}>Login</Link>
             </button>
-            <button>
-              <Link
-                className="bg-[#386BD9] hover:bg-transparent border-[1px] border-[#386BD9] hover:text-[#386BD9] cursor-pointer text-white font-bold py-1 px-4 rounded-tl-lg rounded-br-lg"
-                to={"/signup"}
-              >
-                Sign Up
-              </Link>
+            
+            <button 
+            >
+              <Link to={"/signup"} className="mr-[70px] bg-[#386BD9] hover:bg-transparent border-[1px] border-[#386BD9] cursor-pointer text-white font-bold pt-2 pb-3 px-4 rounded-tl-lg rounded-br-lg" >signup</Link>
             </button>
+              
           </div>
         )}
       </div>
