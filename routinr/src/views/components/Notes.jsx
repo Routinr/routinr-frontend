@@ -130,7 +130,7 @@ const Notes = () => {
             placeholder="Search Notes"
           />
         </div>
-        <div className="flex flex-wrap lg:px-8 justify-evenly text-white mt-14 md:gap-5 md:justify-start md:px-5">
+        <div className="flex flex-wrap lg:px-3 lg:ml-3 justify-evenly text-white mt-14 md:gap-5 md:justify-start md:px-5">
           {filteredData.map((item) => (
             <div
               className={`border-[1px] border-white p-4 mb-3 lg:w-[200px] rounded-md cursor-pointer md:w-full ${

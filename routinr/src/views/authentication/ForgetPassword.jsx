@@ -1,10 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/App.css";
 import SubmitBtn from "../../assets/icons/signup.png";
 import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 
 const ForgetPassword = () => {
+  const navigate = useNavigate();
+  const [forgotPassword, setForgotPassword] = useState({
+    email: "",
+  });
+
+  const handleForgetPassword = (e) => {
+    const { name, value } = e.target;
+    setForgotPassword((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
+
+  const formForgetPassword = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("https://routinr-backend.onrender.com/auth/forgot-password", forgotPassword)
+
+      if (response.ok) {
+        alert ("a message has been sent to your email")
+
+        navigate("/recoverpassword")
+      } else {
+        console.log(err)
+      }
+    } catch (err){
+      console.error(err)
+    }
+  }
   return (
     <div className="main w-full h-[100vh] grid place-items-center">
       <div
@@ -18,16 +50,18 @@ const ForgetPassword = () => {
           <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
             Forgot Password ?
           </h1>
-          <form action="" className="flex flex-col">
+          <form className="flex flex-col" onSubmit={formForgetPassword}>
             <input
               type="email"
-              name=""
-              id=""
+              name="email"
+              id="email"
+              value={forgotPassword.email}
+              onChange={handleForgetPassword}
               placeholder="Your email address"
               className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
-            <Link to={"/recoverpassword"} type="submit" className="">
+            <Link type="submit" className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"
