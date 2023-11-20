@@ -15,7 +15,7 @@ const CardsSection = () => {
         <div className="flex flex-col md:bg-[#031A3E] justify-center items-center text-center border-[1px] border-[rgb(189,106,247)] text-white p-2 pb-6 md:p-5 lg:p-8 rounded-lg z-30 md:w-[300px] lg:w-[500px] w-[350px] md:pb-12">
           <img className="w-[85px] mt-5 md:mt-0" src={shape} alt="shape" />
           <h2 className="mt-6 font-bold text-lg md:text-2xl">My Tasks</h2>
-          <p className="mt-5  font-semibold text-[12px] md:text-[20px]">nt t 
+          <p className="mt-5  font-semibold text-[12px] md:text-[20px]">
             Easily Balance Your Work, Life And
             <br /> Everything In Between
           </p>

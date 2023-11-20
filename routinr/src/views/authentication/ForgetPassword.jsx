@@ -61,13 +61,13 @@ const ForgetPassword = () => {
               className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
             />
 
-            <Link type="submit" className="">
+            <button type="submit" className="">
               <img
                 src={SubmitBtn}
                 alt="Submit"
                 className="w-[40px] h-[40px] float-right ml-2 my-2"
               />
-            </Link>
+            </button>
           </form>
 
           <div className="flex justify-between flex-row w-full mt-7 ">

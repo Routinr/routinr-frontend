@@ -57,7 +57,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="main w-full h-[100vh] grid place-items-center">
+    <div className="main w-full h-[100vh] overflow-scroll grid place-items-center">
       <div
         className="auth-cont flex
         w-2/3
@@ -134,7 +134,7 @@ const Signup = () => {
               <button
                 type="button"
                 onClick={togglePassword}
-                className="w-[15%] text-white pb-3"
+                className="w-[15%] text-white pb-3 ml-2"
               >
                 {showPassword ? "Show" : "Hide"}
               </button>
@@ -154,7 +154,7 @@ const Signup = () => {
               to="/login"
               className="text-white mx-2 mt-3 font-semibold underline text-[17px]"
             >
-              Sign in
+              Have an Account?
             </Link>
           </div>
         </div>

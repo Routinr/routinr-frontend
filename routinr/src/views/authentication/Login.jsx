@@ -35,8 +35,9 @@ const Login = () => {
         loginUser
       )
 
-      if (response.data.error) {
-        setLoginError(response.data.error);
+      const error = response.data?.error;
+      if (error) {
+        setLoginError(error);
         return;
       }
       const token = response.data.token; // Extract the token from the response object
