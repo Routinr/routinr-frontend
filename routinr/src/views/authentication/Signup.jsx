@@ -8,6 +8,7 @@ import DesktopAuth from "../../assets/images/auth/DesktopAuth.png";
 const Signup = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [registerUser, setRegisterUser] = useState({
     first_name: "",
     last_name: "",
@@ -31,28 +32,59 @@ const Signup = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+
+    // Show the preloader
+    setIsLoading(true);
+
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!@#$%^&*])[A-Za-z\d-_!@#$%^&*]{8,}$/;
     if (!passwordRegex.test(registerUser.password)) {
       // Password doesn't meet the requirements
-      alert("Password must be at least 8 characters long and include letters, numbers, and symbols.")
+      alert("Password must be at least 8 characters long and include letters, numbers, and symbols.");
+      // Hide the preloader on validation failure
+      setIsLoading(false);
       return;
     }
 
     try {
+      // Simulate an asynchronous action (API call)
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Actual API call
       const response = await axios.post(
         "https://routinr-backend.onrender.com/auth/register",
         registerUser
       );
 
       if (response.status >= 200 && response.status < 300) {
-        console.log("signup successfull");
+        console.log("signup successful");
+
+        // Reset the form fields
+        setRegisterUser({
+          first_name: "",
+          last_name: "",
+          username: "",
+          email: "",
+          password: "",
+          phone_number: "",
+        });
+
+        // Hide the preloader on success
+        setIsLoading(false);
+
+        // Navigate to the dashboard
         navigate("/dashboard");
       } else {
-        console.error("signup failed");
+        console.error("signup failed:", response.data?.error);
+
+        // Hide the preloader on API failure
+        setIsLoading(false);
       }
     } catch (err) {
       console.error("error during signup:", err);
+
+      // Hide the preloader on error
+      setIsLoading(false);
     }
   };
 
@@ -140,13 +172,17 @@ const Signup = () => {
               </button>
             </div>
 
-            <button type="submit" className="">
-              <img
-                src={SubmitBtn}
-                alt="Submit"
-                className="w-[40px] h-[40px] float-right ml-2 my-2"
-              />
-            </button>
+            {isLoading ? (
+              <div className="text-white w-full flex justify-center items-center font-medium">Loading...</div>
+            ) : (
+              <button type="submit" className="">
+                <img
+                  src={SubmitBtn}
+                  alt="Submit"
+                  className="w-[40px] h-[40px] float-right ml-2 my-2"
+                />
+              </button>
+            )}
           </form>
 
           <div className="flex flex-start w-full mb-5">

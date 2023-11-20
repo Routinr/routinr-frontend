@@ -9,6 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [loginUser, setLoginUser] = useState({
     email: "",
     password: "",
@@ -29,26 +30,51 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
+    // Show the preloader
+    setIsLoading(true);
+
     try {
+      // Simulate an asynchronous action (API call)
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Your actual API call would be here
       const response = await axios.post(
         "https://routinr-backend.onrender.com/auth/login",
         loginUser
-      )
+      );
 
       const error = response.data?.error;
       if (error) {
         setLoginError(error);
+        // Hide the preloader on error
+        setIsLoading(false);
         return;
       }
-      const token = response.data.token; // Extract the token from the response object
-      console.log(token); // Check if you're getting the token correctly
-  
-      // Store the token securely in the browser's localStorage
-      localStorage.setItem('accessToken', token);
 
-      navigate("/dashboard")
+      // Extract the token from the response object
+      const token = response.data.token;
+      console.log(token);
+
+      // Store the token securely in the browser's localStorage
+      localStorage.setItem("accessToken", token);
+
+      // Reset the form fields
+      setLoginUser({
+        email: "",
+        password: "",
+      });
+
+      // Hide the preloader on success
+      setIsLoading(false);
+
+      // navigate to dashboard
+      navigate("/dashboard");
     } catch (err) {
-      console.error("error during login", err);
+      // Handle errors here
+      console.error("Error during login:", err);
+
+      // Hide the preloader on error
+      setIsLoading(false);
     }
   };
 
@@ -96,13 +122,17 @@ const Login = () => {
               </button>
             </div>
 
-            <button type="submit" className="">
-              <img
-                src={SubmitBtn}
-                alt="Submit"
-                className="w-[40px] h-[40px] float-right ml-2 my-2"
-              />
-            </button>
+            {isLoading ? (
+              <div className="text-white w-full flex justify-center items-center font-medium">Loading...</div>
+            ) : (
+              <button type="submit" className="">
+                <img
+                  src={SubmitBtn}
+                  alt="Submit"
+                  className="w-[40px] h-[40px] float-right ml-2 my-2"
+                />
+              </button>
+            )}
           </form>
 
           <div className="flex justify-between w-full mb-5 custom-sm:flex-col">
