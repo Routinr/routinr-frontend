@@ -15,6 +15,7 @@ import HelpCenter from './views/components/HelpCenter.jsx';
 import Notes from './views/components/Notes.jsx';
 import Settings from './views/components/Settings.jsx';
 import Tasks from './views/components/Tasks.jsx';
+import NewTask from './views/components/NewTaskPage.jsx';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/notes" exact element={<Notes />} />
         <Route path="/settings" exact element={<Settings />} />
         <Route path="/tasks" exact element={<Tasks />} />
+        <Route path="/newtasks" exact element={<NewTask />} />
       </Routes>
     </BrowserRouter>
   );

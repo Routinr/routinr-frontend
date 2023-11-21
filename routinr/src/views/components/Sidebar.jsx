@@ -25,7 +25,7 @@ const Sidebar = () => {
         </div>
       </Link>
 
-      <Link to={"/tasks"}>
+      <Link to={"/newtasks"}>
         <div className="mt-5 flex gap-3 items-center py-2 px-4 border-white border-[1px] rounded-lg cursor-pointer hover:bg-[#386BD9] hover:border-[#386BD9]">
           <BiTask
             size={25}

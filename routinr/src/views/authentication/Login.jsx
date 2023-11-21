@@ -10,7 +10,7 @@ const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [loginUser, setLoginUser] = useState({
+  const [loginUser, setLoginUser] =   ({
     email: "",
     password: "",
   });
@@ -84,11 +84,11 @@ const Login = () => {
         className="auth-cont flex 
         w-2/3
         custom-sm:w-[90%]
-        lg:pr-0 lg:py-0 lg:w-7/12 lg:justify-between lg:items-center
+       lg:py-0 lg:w-5/12 lg:justify-between lg:items-center
       bg-black shadow-2xl rounded-2xl p-5 bg-clip-padding bg-opacity-25"
       >
-        <div className="w-[95%] lg:w-[50%] lg:h-[60%] grid items-center">
-          <h1 className="my-[20px] text-white text-3xl font-semibold text-center mb-[30px] custom-sm:text-2xl">
+        <div className="w-full grid items-center p-4">
+          <h1 className="my-[50px] text-white text-3xl font-semibold text-center custom-sm:text-2xl">
             Welcome Back :)
           </h1>
           <form action="" className="flex flex-col" onSubmit={handleLogin}>
@@ -100,7 +100,7 @@ const Login = () => {
               id=""
               value={loginUser.email}
               placeholder="Email"
-              className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25"
+              className="input px-3 mb-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25 w-full"
             />
             <div className="flex w-full">
               <input
@@ -111,21 +111,22 @@ const Login = () => {
                 type={showPassword ? "password" : "text"}
                 name="password"
                 placeholder="Password"
-                className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25 w-[85%]"
+                className="input px-3 text-white bg-black shadow-xl rounded-md bg-clip-padding bg-opacity-25 w-full"
               />
               <button
                 type="button"
                 onClick={togglePassword}
-                className="w-[15%] text-white pb-3"
+                className="w-[15%] text-white pb-3 ml-2"
               >
-                {showPassword ? "Show" : "Hide"}
+                {showPassword ? "show" : "hide"}
               </button>
             </div>
 
             {isLoading ? (
               <div className="text-white w-full flex justify-center items-center font-medium">Loading...</div>
             ) : (
-              <button type="submit" className="">
+              <button type="submit" className="text-white flex justify-between items-center pl-2 text-lg font-medium">
+                Sign In
                 <img
                   src={SubmitBtn}
                   alt="Submit"
@@ -135,27 +136,27 @@ const Login = () => {
             )}
           </form>
 
-          <div className="flex justify-between w-full mb-5 custom-sm:flex-col">
+          <div className="flex justify-between w-full mb-5 mt-5 custom-sm:flex-col">
             <Link
               to={"/signup"}
-              className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:mt-3 custom-sm:text-[14px]"
+              className="text-white mx-2 mt-3 font-medium text-[17px] custom-sm:mt-3 custom-sm:text-[14px]"
             >
-              Sign Up
+              Don't have an account?
             </Link>
 
             <Link to={"/forgotpassword"}>
-              <h1 className="text-white mx-2 mt-3 font-semibold underline text-[17px] custom-sm:text-[14px]">
+              <h1 className="text-white mx-2 mt-3 font-medium text-[17px] custom-sm:text-[14px]">
                 Forgot Password?
               </h1>
             </Link>
           </div>
         </div>
 
-        <img
+        {/* <img
           src={DesktopAuth}
           alt=""
           className="desktop-img h-[500px] ml-[35px]"
-        />
+        /> */}
       </div>
     </div>
   );
